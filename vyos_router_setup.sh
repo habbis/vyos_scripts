@@ -15,7 +15,7 @@ save
 
 # dhcp server config 
 set service dhcp-server shared-network-name LAN subnet 10.31.1.0/24 range 0 start 10.31.1.50
-set service dhcp-server shared-network-name LAN subnet 10.31.1.0/24 range 0 stop  10.31.1.50
+set service dhcp-server shared-network-name LAN subnet 10.31.1.0/24 range 0 stop  10.31.1.200
 
 # dns for dhcp server
 set service dhcp-server shared-network-name LAN subnet 10.31.1.0/24 nameserver-server 10.31.1.1
