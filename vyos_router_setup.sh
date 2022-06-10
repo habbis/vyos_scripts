@@ -18,7 +18,7 @@ set service dhcp-server shared-network-name LAN subnet 10.31.1.0/24 range 0 star
 set service dhcp-server shared-network-name LAN subnet 10.31.1.0/24 range 0 stop  10.31.1.200
 
 # dns for dhcp server
-set service dhcp-server shared-network-name LAN subnet 10.31.1.0/24 nameserver-server 10.31.1.1
+set service dhcp-server shared-network-name LAN subnet 10.31.1.0/24 name-server 10.31.1.1
 set service dhcp-server shared-network-name LAN subnet 10.31.1.0/24 default-router 10.31.1.1
 
 # set ssh port 
@@ -36,16 +36,16 @@ commit
 save
 
 set service dns forwarding listen-address 10.31.1.1
-set service dns forwarding allow-from 10.31.1.0/16
+set service dns forwarding allow-from 10.31.0.0/16
 set service dns forwarding cache-size '0'
 commit
 save
 
 # dns forwarding
-set service dns forwarding name_server 1.1.1.1
-set service dns forwarding name_server 1.0.0.1
-set service dns forwarding name_server 8.8.8.8
-set service dns forwarding name_server 8.8.4.4
+set service dns forwarding name-server 1.1.1.1
+set service dns forwarding name-server 1.0.0.1
+set service dns forwarding name-server 8.8.8.8
+set service dns forwarding name-server 8.8.4.4
 commit
 save
 
