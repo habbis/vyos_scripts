@@ -96,21 +96,21 @@ set firewall name WAN-LAN rule 20 action accept
 
 # zone rules
 
-set zone-policy zone LAN default-action drop
-set zone-policy zone LAN from WAN firewall name WAN-LAN
-set zone-policy zone LAN from LOCAL firewall name LOCAL-LAN
+set firewall zone LAN default-action drop
+set firewall zone LAN from WAN firewall name WAN-LAN
+set firewall zone LAN from LOCAL firewall name LOCAL-LAN
 set zone-policy zone LAN interface eth4
 
-set zone-policy zone LOCAL local-zone
-set zone-policy zone LOCAL from LAN firewall name LAN-LOCAL
-set zone-policy zone LOCAL from WAN firewall name WAN-LOCAL
-set zone-policy zone LOCAL default-action drop
+set firewall zone LOCAL local-zone
+set firewall zone LOCAL from LAN firewall name LAN-LOCAL
+set firewall zone LOCAL from WAN firewall name WAN-LOCAL
+set firewall zone LOCAL default-action drop
 
 
-set zone-policy zone WAN from LAN firewall name LAN-WAN
-set zone-policy zone WAN from LOCAL firewall name LOCAL-WAN
-set zone-policy zone WAN interface eth1
-set zone-policy zone WAN default-action drop
+set firewall zone WAN from LAN firewall name LAN-WAN
+set firewall zone WAN from LOCAL firewall name LOCAL-WAN
+set firewall zone WAN interface eth1
+set firewall zone WAN default-action drop
 
 # wan interface dhcp
 set interfaces ethernet eth1 address dhcp
