@@ -99,7 +99,7 @@ set firewall name WAN-LAN rule 20 action accept
 set firewall zone LAN default-action drop
 set firewall zone LAN from WAN firewall name WAN-LAN
 set firewall zone LAN from LOCAL firewall name LOCAL-LAN
-set zone-policy zone LAN interface eth4
+set firewall zone LAN interface eth4
 
 set firewall zone LOCAL local-zone
 set firewall zone LOCAL from LAN firewall name LAN-LOCAL
