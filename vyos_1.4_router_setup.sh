@@ -4,6 +4,9 @@ source /opt/vyatta/etc/functions/script-template
 # based on this guide 
 # https://blog.kroy.io/2020/05/04/vyos-from-scratch-edition-1/?utm_source=pocket_mylist#Basic_Configuration
 
+# WAN = eth1
+# LAN = eth4
+
 configure
 
 # set interface address
