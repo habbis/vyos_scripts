@@ -10,19 +10,19 @@ source /opt/vyatta/etc/functions/script-template
 configure
 
 # set interface address
-set interfaces ethernet eth4 address 10.31.1.1/24
+set interfaces ethernet eth4 address 172.16.1.1/24
 set interfaces ethernet eth4 description LAN    
 
 commit
 save
 
 # dhcp server config 
-set service dhcp-server shared-network-name LAN subnet 10.31.1.0/24 range 0 start 10.31.1.50
-set service dhcp-server shared-network-name LAN subnet 10.31.1.0/24 range 0 stop  10.31.1.200
+set service dhcp-server shared-network-name LAN subnet 172.16.1.0/24 range 0 start 172.16.1.50
+set service dhcp-server shared-network-name LAN subnet 172.16.1.0/24 range 0 stop  172.16.1.200
 
 # dns for dhcp server
-set service dhcp-server shared-network-name LAN subnet 10.31.1.0/24 name-server 10.31.1.1
-set service dhcp-server shared-network-name LAN subnet 10.31.1.0/24 default-router 10.31.1.1
+set service dhcp-server shared-network-name LAN subnet 172.16.1.0/24 name-server 172.16.1.1
+set service dhcp-server shared-network-name LAN subnet 172.16.1.0/24 default-router 172.16.1.1
 
 # set ssh port 
 set service ssh port 22
@@ -38,7 +38,7 @@ set nat source rule 100 translation address masquerade
 commit
 save
 
-set service dns forwarding listen-address 10.31.1.1
+set service dns forwarding listen-address 172.16.1.1
 set service dns forwarding allow-from 10.31.0.0/16
 set service dns forwarding cache-size '0'
 commit
@@ -53,7 +53,7 @@ commit
 save
 
 # system dns
-set system name-server 10.31.1.1
+set system name-server 172.16.1.1
 commit
 save
 
